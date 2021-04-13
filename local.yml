@@ -1,0 +1,9 @@
+version: '3'
+
+
+services:
+    react:
+        build: .
+        image: service_ama_maule
+        ports:
+            - "80:80"

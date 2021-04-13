@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    overflow-y:scroll;
+    overflow: scroll;
+
+  }
+
+.meeting-info-container {
+    display:none;
+}
+.send-video-container{
+    display: none;
+}
+
+.full-screen-icon{
+    display: none;
+}
+
+.chat-receiver-list__to-text{
+    display: none;
+}
+
+.chat-container__chat-control{
+    display: none;
+}
+
+.ant-carousel .slick-dots li button {
+    background: #ce3d4b;
+    opacity: 0.4;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+    opacity: 1;
+    background: #ce3d4b;
+}
+
+.participants-section-container__participants-footer-bottom button {
+    display: none;
+}
+
+.chat-receiver-list__menu {
+    display: none;
+}
+
+.meeting-info-icon__icon meeting-info-icon__icon--encryption{
+    display: none;
+}
+
+.send-video-container {
+    display: none;
+}
+
+.zmu-paper meeting-info-icon__meeting-paper{
+    display: none;
+}
+
+#zmmtg-root {
+    display: none;
+  }

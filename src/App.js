@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import './assets/css/App.css'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import api from './api/endpoints'
+import SDKwebinar from "./components/SDKwebinar"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const GetTransmission = ({match}) => {
+
+    const initialState = {
+        uuid:match.params.id,
+        transmission: null,
+        user: null
+    }
+    const [state, setState] = useState(initialState)
+
+    useEffect(()=>{
+        async function getTransmission(invitation){
+            const request = await api.retrieve_invitation(invitation).then((response)=> {
+                setState({
+                    ...state,
+                    transmission: response.data.transmission,
+                    user: response.data.user
+                })
+            }).catch((error)=> {
+                window.location.href='http://localhost:3001'
+            })
+            return request
+        }
+        getTransmission(state.uuid)
+    }, [])
+
+    return(<> {state.transmission && <SDKwebinar transmission={state.transmission} user={state.user} />} </>)
 }
 
-export default App;
+
+const  App = () => {
+
+  return (
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/:id' component={GetTransmission}  />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  )
+}
+
+
+export default App
