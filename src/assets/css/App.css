@@ -8,9 +8,6 @@ body {
 .meeting-info-container {
     display:none;
 }
-.send-video-container{
-    display: none;
-}
 
 .full-screen-icon{
     display: none;
@@ -38,6 +35,26 @@ body {
     display: none;
 }
 
+.chat-header__dropdown-menu dropdown-menu{
+    display: none;
+}
+
+.chat-header__menu {
+    display: none;
+}
+
+.participants-header__dropdown-menu{
+    display: none;
+}
+
+.chat-header__chat-pop-btn{
+    display: none;
+}
+
+.participants-header__participants-pop-btn{
+    display: none;
+}
+
 .chat-receiver-list__menu {
     display: none;
 }
@@ -45,7 +62,9 @@ body {
 .meeting-info-icon__icon meeting-info-icon__icon--encryption{
     display: none;
 }
-
+#wc-footer-left{
+    display: none;
+}
 .send-video-container {
     display: none;
 }
